@@ -4,7 +4,7 @@ const router=Router()
 
 //Importer les controllers
 
-import { creerLivreur, lireLivreur, mettreAJourLivreur, supprimerLivreur } from '../controllers/livreurController.js';
+import { creerLivreur, lireLivreur, mettreAJourLivreur, supprimerLivreur } from '../controllers/livreur.js';
 
 
 

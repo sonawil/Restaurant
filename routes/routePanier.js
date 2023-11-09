@@ -4,7 +4,7 @@ const router=Router()
 
 //Importer les controllers
 
-import { creerPanier, lirePanier, mettreAJourPanier, supprimerPanier } from '../controllers/panierController.js';
+import { creerPanier, lirePanier, mettreAJourPanier, supprimerPanier } from '../controllers/panier.js';
 
 
 // Créer un panier

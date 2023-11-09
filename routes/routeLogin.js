@@ -1,7 +1,9 @@
 import { Router } from "express";
-import { login } from "../authentification/loginController.js";
 
 const router = Router()
+
+//Importer les controllers
+import { login } from "../authentification/loginController.js";
 
 router.post('/', login)
 

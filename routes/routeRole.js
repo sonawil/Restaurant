@@ -4,7 +4,7 @@ const router=Router()
 
 //Importer les controllers
 
-import { creerRole, lireRole, mettreAJourRole, supprimerRole } from '../controllers/roleController.js';
+import { creerRole, lireRole, mettreAJourRole, supprimerRole } from '../controllers/role.js';
 
 
 

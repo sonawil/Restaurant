@@ -4,7 +4,7 @@ const router=Router()
 
 //Importer les controllers
 
-import { creerHistoriqueCommande, lireHistoriqueCommande, mettreAJourHistoriqueCommande, supprimerHistoriqueCommande } from '../controllers/historiqueCommandeController.js';
+import { creerHistoriqueCommande, lireHistoriqueCommande, mettreAJourHistoriqueCommande, supprimerHistoriqueCommande } from '../controllers/historiqueCommandes.js';
 
 
 

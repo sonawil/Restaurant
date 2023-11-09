@@ -43,7 +43,7 @@ export const mettreAJourEtatCommande = async (req, res) => {
     }
 }
 
-import { EtatCommande } from "../models/index.js";
+
 
 export const supprimerEtatCommande = async (req, res) => {
     const etatCommandeId = req.params.id;

@@ -4,7 +4,7 @@ const router=Router()
 
 //Importer les controllers
 
-import { creerProduit, lireProduit, mettreAJourProduit, supprimerProduit } from '../controllers/produitController.js';
+import { creerProduit, lireProduit, mettreAJourProduit, supprimerProduit } from '../controllers/produit.js';
 
 
 // Créer un produit

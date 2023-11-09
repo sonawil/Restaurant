@@ -4,7 +4,7 @@ const router=Router()
 
 //Importer les controllers
 
-import { creerPaiement, lirePaiement, mettreAJourPaiement, supprimerPaiement } from '../controllers/paiementController.js';
+import { creerPaiement, lirePaiement, mettreAJourPaiement, supprimerPaiement } from '../controllers/paiement.js';
 
 
 // Créer un paiement

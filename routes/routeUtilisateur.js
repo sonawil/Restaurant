@@ -4,7 +4,7 @@ const router=Router()
 
 //Importer les controllers
 
-import { creerUtilisateur, lireUtilisateur, mettreAJourUtilisateur, supprimerUtilisateur } from '../controllers/utilisateurController.js';
+import { creerUtilisateur, lireUtilisateur, mettreAJourUtilisateur, supprimerUtilisateur } from '../controllers/utilisateur.js';
 
 
 // Créer un utilisateur

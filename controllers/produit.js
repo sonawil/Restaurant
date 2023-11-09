@@ -9,7 +9,7 @@ export const creerProduit = async (req, res) => {
     }
 }
 
-import { Produit } from "../models/index.js";
+
 
 export const lireProduit = async (req, res) => {
     const produitId = req.params.id;
@@ -25,7 +25,7 @@ export const lireProduit = async (req, res) => {
     }
 }
 
-import { Produit } from "../models/index.js";
+
 
 export const mettreAJourProduit = async (req, res) => {
     const produitId = req.params.id;
@@ -42,7 +42,7 @@ export const mettreAJourProduit = async (req, res) => {
     }
 }
 
-import { Produit } from "../models/index.js";
+
 
 export const supprimerProduit = async (req, res) => {
     const produitId = req.params.id;

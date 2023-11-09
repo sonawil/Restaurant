@@ -3,7 +3,7 @@ import { Router } from "express";
 const router=Router()
 
 //Importer les controllers
-import { listeCommandes, creerCommande, lireCommande, mettreAJourCommande, supprimerCommande } from '../controllers/commandeController.js';
+import { listeCommandes, creerCommande, lireCommande, mettreAJourCommande, supprimerCommande } from '../controllers/commande.js';
 
 router.get('/', listeCommandes)
 

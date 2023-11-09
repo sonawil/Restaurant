@@ -1,16 +1,20 @@
 //Importer les modeles
-const Commande = require('./Commande.js');
-const Role = require('./role.js');
-const Panier = require('./Panier.js');
-const Utilisateur = require('./Utilisateur.js');
-const EtatCommande = require('./EtatCommande.js');
-const HistoriqueCommandes = require('./HistoriqueCommandes.js');
-const Livraison = require('./Livraison.js');
-const Produit = require('./Produit.js');
-const HistoriqueLivraison = require('./HistoriqueLivraison.js');
-const DetailsCommande = require('./DetailsCommande.js');
-const Paiement = require('./Paiement.js');
-const Livreur = require('./Livreur.js');
+
+import Commande from "./Commande.js";
+import DetailsCommande from "./DetailsCommande.js";
+import EtatCommande from "./EtatCommande.js"
+import HistoriqueCommandes from "./HistoriqueCommandes.js";
+import HistoriqueLivraison from "./HistoriqueLivraison.js";
+import Livraison from "./Livraison.js";
+import Livreur from "./Livreur.js";
+import Paiement from "./Paiement.js";
+import Panier from "./Panier.js";
+import Produit from "./Produit.js";
+import Role from "./Role.js"; 
+import Utilisateur from "./Utilisateur.js"
+
+
+
 
 
 // Associations entre les tables .

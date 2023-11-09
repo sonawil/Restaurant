@@ -4,7 +4,7 @@ const router=Router()
 
 //Importer les controllers
 
-import { creerHistoriqueLivraison, lireHistoriqueLivraison, mettreAJourHistoriqueLivraison, supprimerHistoriqueLivraison } from '../controllers/historiqueLivraisonController.js';
+import { creerHistoriqueLivraison, lireHistoriqueLivraison, mettreAJourHistoriqueLivraison, supprimerHistoriqueLivraison } from '../controllers/historiqueLivraison.js';
 
 
 

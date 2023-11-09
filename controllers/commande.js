@@ -2,7 +2,7 @@
 import { Commande } from "../models/index.js";
 
 
-import { Commande } from "../models/index.js";
+
 
 export const creerCommande = async (req, res) => {
     try {
@@ -13,7 +13,7 @@ export const creerCommande = async (req, res) => {
     }
 }
 
-import { Commande } from "../models/index.js";
+
 
 export const lireCommande = async (req, res) => {
     const commandeId = req.params.id;
@@ -29,7 +29,7 @@ export const lireCommande = async (req, res) => {
     }
 }
 
-import { Commande } from "../models/index.js";
+
 
 export const mettreAJourCommande = async (req, res) => {
     const commandeId = req.params.id;
@@ -46,7 +46,7 @@ export const mettreAJourCommande = async (req, res) => {
     }
 }
 
-import { Commande } from "../models/index.js";
+
 
 export const supprimerCommande = async (req, res) => {
     const commandeId = req.params.id;

@@ -4,7 +4,7 @@ const router=Router()
 
 //Importer les controllers
 
-import { creerEtatCommande, lireEtatCommande, mettreAJourEtatCommande, supprimerEtatCommande } from '../controllers/etatCommandeController.js';
+import { creerEtatCommande, lireEtatCommande, mettreAJourEtatCommande, supprimerEtatCommande } from '../controllers/etatCommande.js';
 
 
 
