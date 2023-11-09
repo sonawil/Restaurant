@@ -6,8 +6,18 @@ import compression from 'compression'
 import dotenv from 'dotenv'
 
 // Importation des routes
-import routeEtudiant from './routes/routeEtudiant.js'
-import routeNote from './routes/routeNote.js'
+import routeCommande from './routes/routeCommande.js';
+import routeDetailsCommande from './routes/routeDetailsCommande.js';
+import routeEtatCommande from './routes/routeEtatCommande.js';
+import routeHistoriqueCommande from './routes/routeHistoriqueCommande.js';
+import routeHistoriqueLivraison from './routes/routeHistoriqueLivraison.js';
+import routeLivraison from './routes/routeLivraison.js';
+import routeLivreur from './routes/routeLivreur.js';
+import routePaiement from './routes/routePaiement.js';
+import routePanier from './routes/routePanier.js';
+import routeProduit from './routes/routeProduit.js';
+import routeRole from './routes/routeRole.js';
+import routeUtilisateur from './routes/routeUtilisateur.js';
 
 const PORT = dotenv.config().parsed.PORT
 
