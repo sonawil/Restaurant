@@ -1,35 +1,18 @@
 import { Router } from "express";
 
-const router=Router()
-
+const router = Router();
 //Importer les controllers
-import { listeCommandes, creerCommande, lireCommande, mettreAJourCommande, supprimerCommande } from '../controllers/commande.js';
+import { listeCommandes, creerCommande, lireCommande, mettreAJourCommande, supprimerCommande, commandePagination } from '../controllers/commande.js';
 
-router.get('/', listeCommandes)
 
-//Definition des routes
 
-//router.get('/',verifierLogin, listeCommandes)
-
-// Liste des commandes
-router.get('/commandes', listeCommandes);
 
 // Créer une commande
-router.post('/commandes', creerCommande);
+router.post('/commandes', creerCommande)
+      .get('/commandes/:id', lireCommande, listeCommandes)
+      .put('/commandes/:id', mettreAJourCommande)
+      .delete('/commandes/:id', supprimerCommande)
+      // Liste des commandes avec pagination et des variables de requete
+      .get('/commandes', commandePagination)
 
-// Lire une commande par ID
-router.get('/commandes/:id', lireCommande);
-
-// Mettre à jour une commande par ID
-router.put('/commandes/:id', mettreAJourCommande);
-
-// Supprimer une commande par ID
-router.delete('/commandes/:id', supprimerCommande);
-
-export default router
-
-
-
-
-
-
+export default router;

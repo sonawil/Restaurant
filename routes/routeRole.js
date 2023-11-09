@@ -9,15 +9,15 @@ import { creerRole, lireRole, mettreAJourRole, supprimerRole } from '../controll
 
 
 // Créer un rôle
-router.post('/roles', creerRole);
+router.post('/', creerRole);
 
 // Lire un rôle par ID
-router.get('/roles/:id', lireRole);
+router.get('/:id', lireRole);
 
 // Mettre à jour un rôle par ID
-router.put('/roles/:id', mettreAJourRole);
+router.put('/:id', mettreAJourRole);
 
 // Supprimer un rôle par ID
-router.delete('/roles/:id', supprimerRole);
+router.delete('/:id', supprimerRole);
 
 export default router;

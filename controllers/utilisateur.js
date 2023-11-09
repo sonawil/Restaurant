@@ -58,3 +58,22 @@ export const supprimerUtilisateur = async (req, res) => {
         res.status(400).json({ error: error.message });
     }
 }
+
+export const utilisateurPagination = async(req, res) => {
+    const page = parseInt(req.query.page) || 1; 
+    const limit = parseInt(req.query.limit) || 10; 
+  
+    // Utiliser "Utilisateur" pour faire une requete de base de donnees avec pagination
+  
+    Utilisateur.findAndCountAll({
+      offset: (page - 1) * limit,
+      limit: limit,
+    })
+      .then((result) => {
+        res.json(result);
+      })
+      .catch((error) => {
+        res.status(500).json({ error: 'Une erreur sest produite' });
+      });
+  
+}

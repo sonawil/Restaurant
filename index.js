@@ -39,7 +39,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // Utilisation des routes
 
-app.get('/bonjoursss', (red, res) => {
+app.get('/bonjour', (red, res) => {
     res.send("Bonjour tout le monde")
 })
 

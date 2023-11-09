@@ -74,3 +74,20 @@ export const listeCommandes = async (req, res) => {
         res.status(404).json({ error: error.message })
     }
 }
+
+export const commandePagination = async (req, res) => {
+    const page = parseInt(req.query.page) || 1; 
+    const limit = parseInt(req.query.limit) || 10; 
+  
+    // Utiliser "Commande" pour faire une requete de base de donnees avec pagination
+    Commande.findAndCountAll({
+      offset: (page - 1) * limit,
+      limit: limit,
+    })
+      .then((result) => {
+        res.json(result);
+      })
+      .catch((error) => {
+        res.status(500).json({ error: 'Une erreur s\'est produite' });
+      })
+    }
