@@ -7,6 +7,10 @@ import bcrypt from 'bcryptjs'
 // Le module pour la creation du jeton (token)
 import jwt from 'jsonwebtoken'
 
+// Ajout de l'importation du fichier utilitaire
+
+import { generateToken } from '../jwtUtils';
+
 export const login = async (req, res) => {
 
     const { email, mot_de_passe } = req.body
