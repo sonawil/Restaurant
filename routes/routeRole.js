@@ -4,20 +4,15 @@ const router=Router()
 
 //Importer les controllers
 
-import { creerRole, lireRole, mettreAJourRole, supprimerRole } from '../controllers/role.js';
+import { creerRole, lireRole, mettreAJourRole, supprimerRole,listerRoles } from '../controllers/role.js';
 
 
 
 // Créer un rôle
-router.post('/', creerRole);
-
-// Lire un rôle par ID
-router.get('/:id', lireRole);
-
-// Mettre à jour un rôle par ID
-router.put('/:id', mettreAJourRole);
-
-// Supprimer un rôle par ID
-router.delete('/:id', supprimerRole);
+router.post('/', creerRole)
+      .get('/:id', lireRole)
+      .put('/:id', mettreAJourRole)
+      .delete('/:id', supprimerRole)
+      .get('/',listerRoles)
 
 export default router;

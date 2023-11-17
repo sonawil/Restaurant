@@ -57,3 +57,16 @@ export const supprimerLivreur = async (req, res) => {
         res.status(400).json({ error: error.message });
     }
 }
+
+export const listerLivreurs = async (req, res) => {
+    try {
+        // Utiliser Sequelize pour récupérer tous les livreurs depuis la base de données
+        const livreurs = await Livreur.findAll();
+
+        // Répondre avec la liste des livreurs
+        res.status(200).json({ livreurs });
+    } catch (error) {
+        // En cas d'erreur, renvoyer un code d'erreur et un message
+        res.status(500).json({ error: error.message });
+    }
+};

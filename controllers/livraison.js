@@ -58,3 +58,15 @@ export const supprimerLivraison = async (req, res) => {
     }
 }
 
+export const listerLivraisons = async (req, res) => {
+    try {
+        // Utiliser Sequelize pour récupérer toutes les livraisons depuis la base de données
+        const livraisons = await Livraison.findAll();
+
+        // Répondre avec la liste des livraisons
+        res.status(200).json({ livraisons });
+    } catch (error) {
+        // En cas d'erreur, renvoyer un code d'erreur et un message
+        res.status(500).json({ error: error.message });
+    }
+};

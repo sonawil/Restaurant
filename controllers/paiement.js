@@ -58,3 +58,16 @@ export const supprimerPaiement = async (req, res) => {
         res.status(400).json({ error: error.message });
     }
 }
+
+export const listerPaiements = async (req, res) => {
+    try {
+        // Utiliser Sequelize pour récupérer tous les paiements depuis la base de données
+        const paiements = await Paiement.findAll();
+
+        // Répondre avec la liste des paiements
+        res.status(200).json({ paiements });
+    } catch (error) {
+        // En cas d'erreur, renvoyer un code d'erreur et un message
+        res.status(500).json({ error: error.message });
+    }
+};

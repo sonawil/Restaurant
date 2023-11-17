@@ -59,3 +59,16 @@ export const supprimerEtatCommande = async (req, res) => {
         res.status(400).json({ error: error.message });
     }
 }
+
+export const listerEtatCommande = async (req, res) => {
+    try {
+        // Utiliser Sequelize pour récupérer tous les rôles depuis la base de données
+        const etatCommande = await EtatCommande.findAll();
+
+        // Répondre avec la liste des rôles
+        res.status(200).json({ etatCommande });
+    } catch (error) {
+        // En cas d'erreur, renvoyer un code d'erreur et un message
+        res.status(500).json({ error: error.message });
+    }
+}

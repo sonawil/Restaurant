@@ -59,3 +59,26 @@ export const supprimerHistoriqueLivraison = async (req, res) => {
     }
 }
 
+export const listeHistoriqueLivraisons = async (req, res) => {
+    try {
+        // Récupérer les paramètres de pagination depuis la requête
+        const page = parseInt(req.query.page) || 1; // Page par défaut: 1
+        const limit = parseInt(req.query.limit) || 10; // Limite par défaut: 10 historiques de livraisons par page
+
+        // Calculer l'offset pour la pagination
+        const offset = (page - 1) * limit;
+
+        // Utiliser Sequelize pour récupérer l'historique de livraisons paginé
+        const historiquesLivraisons = await HistoriqueLivraison.findAndCountAll({
+            offset,
+            limit
+        });
+
+        // Répondre avec l'historique de livraisons paginé
+        res.status(200).json({ historiquesLivraisons });
+    } catch (error) {
+        // En cas d'erreur, renvoyer un code d'erreur et un message
+        res.status(404).json({ error: error.message });
+    }
+};
+

@@ -14,17 +14,20 @@ import routeHistoriqueCommande from './routes/routeHistoriqueCommande.js';
 import routeHistoriqueLivraison from './routes/routeHistoriqueLivraison.js';
 import routeLivraison from './routes/routeLivraison.js';
 import routeLivreur from './routes/routeLivreur.js';
-import routePaiement from './routes/routePaiement.js';
+import routePaiement from './routes/routepaiement.js';
 import routePanier from './routes/routePanier.js';
 import routeProduit from './routes/routeProduit.js';
 import routeRole from './routes/routeRole.js';
 import routeUtilisateur from './routes/routeUtilisateur.js';
+import routerLogin from './routes/routeLogin.js'
+
+
 
 const PORT = dotenv.config().parsed.PORT
 
 //Import de la base de donnees
 import database from './connexion.js'
-import routerLogin from './routes/routeLogin.js'
+
 
 //Creation des tables
 database.sync()

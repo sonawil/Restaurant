@@ -60,3 +60,17 @@ export const supprimerDetailCommande = async (req, res) => {
         res.status(400).json({ error: error.message });
     }
 }
+
+export const listerDetailsCommande = async (req, res) => {
+    try {
+        // Utiliser Sequelize pour récupérer tous les détails de commande depuis la base de données
+        const detailsCommande = await DetailsCommande.findAll();
+
+        // Répondre avec la liste des détails de commande
+        res.status(200).json({ detailsCommande });
+    } catch (error) {
+        // En cas d'erreur, renvoyer un code d'erreur et un message
+        res.status(404).json({ error: error.message });
+    }
+};
+

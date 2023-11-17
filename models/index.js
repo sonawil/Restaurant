@@ -22,6 +22,9 @@ import Utilisateur from "./Utilisateur.js"
 Utilisateur.belongsTo(Role);
 Role.hasMany(Utilisateur);
 
+
+
+
 // Association entre "Utilisateur" et "Panier".(utilisateur peut avoir plusieurs paniers).
 Utilisateur.hasMany(Panier);
 Panier.belongsTo(Utilisateur);

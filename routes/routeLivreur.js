@@ -4,20 +4,15 @@ const router=Router()
 
 //Importer les controllers
 
-import { creerLivreur, lireLivreur, mettreAJourLivreur, supprimerLivreur } from '../controllers/livreur.js';
+import { creerLivreur, lireLivreur, mettreAJourLivreur, supprimerLivreur, listerLivreurs } from '../controllers/livreur.js';
 
 
 
 // Créer un livreur
-router.post('/livreurs', creerLivreur);
-
-// Lire un livreur par ID
-router.get('/livreurs/:id', lireLivreur);
-
-// Mettre à jour un livreur par ID
-router.put('/livreurs/:id', mettreAJourLivreur);
-
-// Supprimer un livreur par ID
-router.delete('/livreurs/:id', supprimerLivreur);
+router.post('/', creerLivreur)
+      .get('/:id', lireLivreur)
+      .put('/:id', mettreAJourLivreur)
+      .delete('/:id', supprimerLivreur)
+      .get('/', listerLivreurs)
 
 export default router;

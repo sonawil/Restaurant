@@ -60,19 +60,25 @@ export const supprimerProduit = async (req, res) => {
 }
 
 
-export const produitPagination = async (req, res) => {
-    const page = parseInt(req.query.page) || 1; 
-    const limit = parseInt(req.query.limit) || 10; 
-    // Utiliser "Produit" pour faire une requete de base de donnees avec pagination
-  
-    Produit.findAndCountAll({
-      offset: (page - 1) * limit,
-      limit: limit,
-    })
-      .then((result) => {
-        res.json(result);
-      })
-      .catch((error) => {
-        res.status(500).json({ error: 'Une erreur s\'est produite' });
-      });
-  };
+export const listeProduits = async (req, res) => {
+    try {
+        // Récupérer les paramètres de pagination depuis la requête
+        const page = parseInt(req.query.page) || 1; // Page par défaut: 1
+        const limit = parseInt(req.query.limit) || 10; // Limite par défaut: 10 produits par page
+
+        // Calculer l'offset pour la pagination
+        const offset = (page - 1) * limit;
+
+        // Utiliser Sequelize pour récupérer les produits paginés
+        const produits = await Produit.findAndCountAll({
+            offset,
+            limit
+        });
+
+        // Répondre avec les produits paginés
+        res.status(200).json({ produits });
+    } catch (error) {
+        // En cas d'erreur, renvoyer un code d'erreur et un message
+        res.status(404).json({ error: error.message });
+    }
+};

@@ -4,19 +4,14 @@ const router=Router()
 
 //Importer les controllers
 
-import { creerPanier, lirePanier, mettreAJourPanier, supprimerPanier } from '../controllers/panier.js';
+import { creerPanier, lirePanier, mettreAJourPanier, supprimerPanier,listePaniers } from '../controllers/panier.js';
 
 
 // Créer un panier
-router.post('/paniers', creerPanier);
-
-// Lire un panier par ID
-router.get('/paniers/:id', lirePanier);
-
-// Mettre à jour un panier par ID
-router.put('/paniers/:id', mettreAJourPanier);
-
-// Supprimer un panier par ID
-router.delete('/paniers/:id', supprimerPanier);
+router.post('/', creerPanier)
+      .get('/:id', lirePanier,listePaniers)
+      .put('/:id', mettreAJourPanier)
+      .delete('/:id', supprimerPanier)
+      .get('/',listePaniers)
 
 export default router;

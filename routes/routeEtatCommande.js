@@ -4,20 +4,15 @@ const router=Router()
 
 //Importer les controllers
 
-import { creerEtatCommande, lireEtatCommande, mettreAJourEtatCommande, supprimerEtatCommande } from '../controllers/etatCommande.js';
+import { creerEtatCommande, lireEtatCommande, mettreAJourEtatCommande, supprimerEtatCommande, listerEtatCommande } from '../controllers/etatCommande.js';
 
 
 
 // Créer un état de commande
-router.post('/etats-commande', creerEtatCommande);
-
-// Lire un état de commande par ID
-router.get('/etats-commande/:id', lireEtatCommande);
-
-// Mettre à jour un état de commande par ID
-router.put('/etats-commande/:id', mettreAJourEtatCommande);
-
-// Supprimer un état de commande par ID
-router.delete('/etats-commande/:id', supprimerEtatCommande);
+router.post('/', creerEtatCommande)
+      .get('/:id', lireEtatCommande)
+      .put('/:id', mettreAJourEtatCommande)
+      .delete('/:id', supprimerEtatCommande)
+      .get('/',listerEtatCommande)
 
 export default router;

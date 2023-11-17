@@ -4,20 +4,14 @@ const router=Router()
 
 //Importer les controllers
 
-import { creerHistoriqueLivraison, lireHistoriqueLivraison, mettreAJourHistoriqueLivraison, supprimerHistoriqueLivraison } from '../controllers/historiqueLivraison.js';
-
+import { creerHistoriqueLivraison, lireHistoriqueLivraison, mettreAJourHistoriqueLivraison, supprimerHistoriqueLivraison,listeHistoriqueLivraisons } from '../controllers/historiqueLivraison.js';
 
 
 // Créer un historique de livraison
-router.post('/historique-livraison', creerHistoriqueLivraison);
-
-// Lire un historique de livraison par ID
-router.get('/historique-livraison/:id', lireHistoriqueLivraison);
-
-// Mettre à jour un historique de livraison par ID
-router.put('/historique-livraison/:id', mettreAJourHistoriqueLivraison);
-
-// Supprimer un historique de livraison par ID
-router.delete('/historique-livraison/:id', supprimerHistoriqueLivraison);
+router.post('/', creerHistoriqueLivraison)
+      .get('/:id', lireHistoriqueLivraison)
+      .put('/:id', mettreAJourHistoriqueLivraison)
+      .delete('/:id', supprimerHistoriqueLivraison)
+      .get('/', listeHistoriqueLivraisons)
 
 export default router;

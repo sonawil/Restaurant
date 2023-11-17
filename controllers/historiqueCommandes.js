@@ -59,20 +59,26 @@ export const supprimerHistoriqueCommande = async (req, res) => {
     }
 }
 
-export const historiqueCommandePagination = async(req, res) => {
-    const page = parseInt(req.query.page) || 1; 
-    const limit = parseInt(req.query.limit) || 10; 
-  
-    /// Utiliser "Commande" pour faire une requete de base de donnees avec pagination
-  
-    HistoriqueCommandes.findAndCountAll({
-      offset: (page - 1) * limit,
-      limit: limit,
-    })
-      .then((result) => {
-        res.json(result);
-      })
-      .catch((error) => {
-        res.status(500).json({ error: 'Une erreur s\'est produite' });
-      });
-  };
+export const listeHistoriqueCommandes = async (req, res) => {
+    try {
+        // Récupérer les paramètres de pagination depuis la requête
+        const page = parseInt(req.query.page) || 1; // Page par défaut: 1
+        const limit = parseInt(req.query.limit) || 10; // Limite par défaut: 10 historiques de commandes par page
+
+        // Calculer l'offset pour la pagination
+        const offset = (page - 1) * limit;
+
+        // Utiliser Sequelize pour récupérer l'historique des commandes paginé
+        const historiquesCommandes = await HistoriqueCommandes.findAndCountAll({
+            offset,
+            limit
+        });
+
+        // Répondre avec l'historique des commandes paginé
+        res.status(200).json({ historiquesCommandes });
+    } catch (error) {
+        // En cas d'erreur, renvoyer un code d'erreur et un message
+        res.status(404).json({ error: error.message });
+    }
+};
+
